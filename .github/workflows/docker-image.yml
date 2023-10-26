@@ -28,8 +28,8 @@ jobs:
     - name: Build Docker image
       run: |
         docker build . \ 
-          -t "${{ steps.image-name.outputs.IMAGE_NAME }}:latest" \
-          -t "${{ steps.image-name.outputs.IMAGE_NAME }}:${{ github.sha }}"
+        -t "${{ steps.image-name.outputs.IMAGE_NAME }}:latest" \
+        -t "${{ steps.image-name.outputs.IMAGE_NAME }}:${{ github.sha }}"
 
     - name: Publish to container registry
       run: |
