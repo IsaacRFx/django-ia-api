@@ -22,7 +22,7 @@ jobs:
 
     - name: Image name
       id: image-name
-      run: echo "IMAGE_NAME=registry.heroku.com/${{ env.HEROKU_APP_NAME }}/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+      run: echo "IMAGE_NAME=registry.heroku.com/${{ env.HEROKU_APP_NAME }}/web" >> "$GITHUB_OUTPUT"
       
     - name: Build Docker image
       run: |
@@ -34,4 +34,4 @@ jobs:
 
     - name: Release container
       run: |
-        heroku container:release ${{ github.event.repository.name }} --app ${{ env.HEROKU_APP_NAME }}
+        heroku container:release web --app ${{ env.HEROKU_APP_NAME }}
