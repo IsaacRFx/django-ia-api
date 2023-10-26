@@ -34,4 +34,4 @@ jobs:
 
     - name: Release container
       run: |
-        heroku container:release web --app ${{ env.HEROKU_APP_NAME }}
+        heroku container:release ${{ github.event.repository.name }} --app ${{ env.HEROKU_APP_NAME }}
