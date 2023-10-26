@@ -27,7 +27,7 @@ jobs:
       
     - name: Build Docker image
       run: |
-        docker build --file Dockerfile \ 
+        docker build --file ./Dockerfile \ 
           -t "${{ steps.image-name.outputs.IMAGE_NAME }}:latest" \
           -t "${{ steps.image-name.outputs.IMAGE_NAME }}:${{ github.sha }}"
 
