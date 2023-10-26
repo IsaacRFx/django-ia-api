@@ -19,6 +19,11 @@ jobs:
     - name: Image name
       id: image-name
       run: echo "IMAGE_NAME=registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+
+    - name: Pwd
+      run: |
+        pwd
+        ls -R
       
     - name: Build Docker image
       run: |
