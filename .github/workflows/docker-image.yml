@@ -1,0 +1,35 @@
+name: Build and deploy to Heroku
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Heroku container registry login
+      run: |
+        echo ${{ secrets.HEROKU_API_KEY }} | docker login --username=_ registry.heroku.com --password-stdin
+
+    - name: Image name
+      id: image-name
+      run: echo "IMAGE_NAME=registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+      
+    - name: Build Docker image
+      run: |
+        docker build . \ 
+          -t "${{ steps.image-name.outputs.IMAGE_NAME }}:latest" \
+          -t "${{ steps.image-name.outputs.IMAGE_NAME }}:${{ github.sha }}"
+
+    - name: Publish to container registry
+      run: |
+        docker push ${{ steps.image-name.outputs.IMAGE_NAME }} --all-tags
+
+    - name: Release container
+      run: |
+        heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
