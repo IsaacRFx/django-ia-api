@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "fiebre",
+      "patterns": ["tengo fiebre", "siento calor", "mi temperatura está alta"],
+      "responses": ["La fiebre puede ser un síntoma de diversas enfermedades. Te recomiendo consultar a un médico para obtener un diagnóstico adecuado."]
+    },
+    {
+      "tag": "tos",
+      "patterns": ["tengo tos", "me duele la garganta", "tos seca"],
+      "responses": ["La tos puede ser un síntoma de varias afecciones, como resfriados o infecciones respiratorias. Si persiste, consulta a un profesional de la salud."]
+    },
+    {
+      "tag": "dolor_de_cabeza",
+      "patterns": ["tengo dolor de cabeza", "me duele la cabeza", "migraña"],
+      "responses": ["El dolor de cabeza puede tener muchas causas, desde tensiones hasta migrañas. Si es frecuente o severo, busca atención médica."]
+    },
+    {
+      "tag": "dolor_de_garganta",
+      "patterns": ["me duele la garganta", "dolor al tragar", "ronquera"],
+      "responses": ["El dolor de garganta puede ser un síntoma de infecciones como la faringitis"]
+    },
+    {
+        "tag": "saludo_buenos_dias",
+        "patterns": ["buenos días", "día soleado", "día lluvioso"],
+        "responses": ["¡Buenos días! ¿En qué puedo ayudarte hoy?"]
+      },
+      {
+        "tag": "saludo_buenas_tardes",
+        "patterns": ["buenas tardes", "tarde tranquila", "tarde lluviosa"],
+        "responses": ["¡Buenas tardes! ¿En qué puedo asistirte?"]
+      },
+      {
+        "tag": "saludo_buenas_noches",
+        "patterns": ["buenas noches", "noche estrellada", "luna llena"],
+        "responses": ["¡Buenas noches! ¿En qué puedo servirte?"]
+      },
+      {
+        "tag": "saludo_generico",
+        "patterns": ["hola", "¿cómo estás?", "¿qué tal?"],
+        "responses": ["¡Hola! Estoy aquí para ayudarte."]
+      }
+  ]
+}

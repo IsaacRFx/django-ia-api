@@ -1,5 +1,5 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.10.13-bullseye as base
+FROM python:3.10.11-bullseye as base
 
 FROM base as builder
 
@@ -17,7 +17,7 @@ COPY requirements.txt /requirements.txt
 
 RUN pip install --prefix=/install -r /requirements.txt
 
-FROM python:3.10.13-bullseye
+FROM python:3.10.11-bullseye
 
 EXPOSE 8000
 
