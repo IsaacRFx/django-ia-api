@@ -1,44 +1,640 @@
 {
   "intents": [
     {
-      "tag": "fiebre",
-      "patterns": ["tengo fiebre", "siento calor", "mi temperatura está alta"],
-      "responses": ["La fiebre puede ser un síntoma de diversas enfermedades. Te recomiendo consultar a un médico para obtener un diagnóstico adecuado."]
+      "tag": "saludo_buenos_dias",
+      "patterns": ["buenos días", "día soleado", "día lluvioso"],
+      "responses": ["¡Buenos días! ¿En qué puedo ayudarte hoy?"]
     },
     {
-      "tag": "tos",
-      "patterns": ["tengo tos", "me duele la garganta", "tos seca"],
-      "responses": ["La tos puede ser un síntoma de varias afecciones, como resfriados o infecciones respiratorias. Si persiste, consulta a un profesional de la salud."]
+      "tag": "saludo_buenas_tardes",
+      "patterns": ["buenas tardes", "tarde tranquila", "tarde lluviosa"],
+      "responses": ["¡Buenas tardes! ¿En qué puedo asistirte?"]
     },
     {
-      "tag": "dolor_de_cabeza",
-      "patterns": ["tengo dolor de cabeza", "me duele la cabeza", "migraña"],
-      "responses": ["El dolor de cabeza puede tener muchas causas, desde tensiones hasta migrañas. Si es frecuente o severo, busca atención médica."]
+      "tag": "saludo_buenas_noches",
+      "patterns": ["buenas noches", "noche estrellada", "luna llena"],
+      "responses": ["¡Buenas noches! ¿En qué puedo servirte?"]
     },
     {
-      "tag": "dolor_de_garganta",
-      "patterns": ["me duele la garganta", "dolor al tragar", "ronquera"],
-      "responses": ["El dolor de garganta puede ser un síntoma de infecciones como la faringitis"]
+      "tag": "saludo_generico",
+      "patterns": ["hola", "¿cómo estás?", "¿qué tal?"],
+      "responses": ["¡Hola! Estoy aquí para ayudarte."]
     },
     {
-        "tag": "saludo_buenos_dias",
-        "patterns": ["buenos días", "día soleado", "día lluvioso"],
-        "responses": ["¡Buenos días! ¿En qué puedo ayudarte hoy?"]
-      },
-      {
-        "tag": "saludo_buenas_tardes",
-        "patterns": ["buenas tardes", "tarde tranquila", "tarde lluviosa"],
-        "responses": ["¡Buenas tardes! ¿En qué puedo asistirte?"]
-      },
-      {
-        "tag": "saludo_buenas_noches",
-        "patterns": ["buenas noches", "noche estrellada", "luna llena"],
-        "responses": ["¡Buenas noches! ¿En qué puedo servirte?"]
-      },
-      {
-        "tag": "saludo_generico",
-        "patterns": ["hola", "¿cómo estás?", "¿qué tal?"],
-        "responses": ["¡Hola! Estoy aquí para ayudarte."]
-      }
+      "tag": "gripe",
+      "patterns": [
+        "síntomas de la gripe",
+        "creo que tengo gripe",
+        "gripe estacional"
+      ],
+      "responses": [
+        "Los síntomas comunes de la gripe incluyen fiebre, tos, dolor de garganta, congestión nasal y dolores musculares. Descansar y beber líquidos puede ayudar. Si los síntomas persisten, consulta a un médico."
+      ]
+    },
+    {
+      "tag": "resfriado",
+      "patterns": [
+        "resfriado común",
+        "síntomas de resfriado",
+        "cómo tratar un resfriado"
+      ],
+      "responses": [
+        "El resfriado común puede incluir congestión nasal, estornudos, tos y dolor de garganta. Descansar, mantenerse hidratado y tomar medicamentos de venta libre pueden aliviar los síntomas. Si persisten, consulta a un médico."
+      ]
+    },
+    {
+      "tag": "bronquitis",
+      "patterns": [
+        "síntomas de bronquitis",
+        "creo que tengo bronquitis",
+        "tratamiento de la bronquitis"
+      ],
+      "responses": [
+        "La bronquitis puede causar tos persistente, producción de esputo, dificultad para respirar y malestar en el pecho. Descansar, beber líquidos y usar un humidificador pueden ayudar. Si los síntomas empeoran, consulta a un médico."
+      ]
+    },
+    {
+      "tag": "amigdalitis",
+      "patterns": [
+        "síntomas de amigdalitis",
+        "dolor de garganta intenso",
+        "amígdalas inflamadas"
+      ],
+      "responses": [
+        "La amigdalitis puede causar dolor de garganta intenso, dificultad para tragar y amígdalas inflamadas. Descansar, tomar líquidos tibios y usar analgésicos pueden aliviar los síntomas. Consulta a un médico si el dolor persiste."
+      ]
+    },
+    {
+      "tag": "dificultad_respirar",
+      "patterns": [
+        "me cuesta respirar",
+        "dificultad para respirar",
+        "falta de aire"
+      ],
+      "responses": [
+        "La dificultad para respirar puede ser un síntoma grave. Busca atención médica de inmediato para evaluar la situación."
+      ]
+    },
+    {
+      "tag": "fiebre_alta",
+      "patterns": [
+        "temperatura muy alta",
+        "fiebre persistente",
+        "fiebre peligrosa"
+      ],
+      "responses": [
+        "Una fiebre persistente y alta puede indicar una condición médica seria. Consulta a un médico lo antes posible."
+      ]
+    },
+    {
+      "tag": "dolor_pecho",
+      "patterns": [
+        "dolor en el pecho",
+        "malestar en el pecho",
+        "opresión en el pecho"
+      ],
+      "responses": [
+        "El dolor o malestar en el pecho puede tener varias causas, algunas de las cuales son graves. Busca atención médica inmediata."
+      ]
+    },
+    {
+      "tag": "vacuna_influenza",
+      "patterns": [
+        "necesito la vacuna contra la influenza",
+        "vacunación antigripal",
+        "fecha de la vacuna"
+      ],
+      "responses": [
+        "La vacuna contra la influenza es importante para prevenir la gripe estacional. Consulta con tu médico sobre la programación de la vacunación."
+      ]
+    },
+    {
+      "tag": "informacion_medicamentos",
+      "patterns": [
+        "efectos secundarios de los medicamentos",
+        "interacciones medicamentosas",
+        "información sobre medicamentos"
+      ],
+      "responses": [
+        "Es importante conocer los efectos secundarios y las interacciones de los medicamentos. Consulta a tu médico o farmacéutico para obtener información específica."
+      ]
+    },
+    {
+      "tag": "malestar_general",
+      "patterns": [
+        "me siento mal",
+        "malestar general",
+        "cuerpo adolorido"
+      ],
+      "responses": [
+        "El malestar general puede ser causado por diversas razones. Si persiste, te recomiendo que consultes a un médico para un diagnóstico adecuado."
+      ]
+    },
+    {
+      "tag": "informacion_covid",
+      "patterns": [
+        "síntomas de COVID-19",
+        "información sobre el coronavirus",
+        "prevención COVID"
+      ],
+      "responses": [
+        "Los síntomas de COVID-19 incluyen fiebre, tos, dificultad para respirar y pérdida del gusto u olfato. Para obtener información actualizada y medidas preventivas, consulta las fuentes de salud confiables."
+      ]
+    },
+    {
+      "tag": "alergia",
+      "patterns": [
+        "reacciones alérgicas",
+        "alergia estacional",
+        "picazón en la piel"
+      ],
+      "responses": [
+        "Las reacciones alérgicas pueden variar. Si experimentas síntomas alérgicos, evita el desencadenante y considera consultar a un alergólogo."
+      ]
+    },
+    {
+      "tag": "informacion_medicamentos",
+      "patterns": [
+        "efectos secundarios de los medicamentos",
+        "interacciones medicamentosas",
+        "información sobre medicamentos"
+      ],
+      "responses": [
+        "Es importante conocer los efectos secundarios y las interacciones de los medicamentos. Consulta a tu médico o farmacéutico para obtener información específica."
+      ]
+    },
+    {
+      "tag": "dolor_muscular",
+      "patterns": [
+        "dolor muscular",
+        "músculos adoloridos",
+        "rigidez muscular"
+      ],
+      "responses": [
+        "El dolor muscular puede deberse a diferentes causas, como ejercicio, tensión o infecciones. Si el dolor persiste, busca asesoramiento médico."
+      ]
+    },
+    {
+      "tag": "falta_aire",
+      "patterns": [
+        "me falta el aire",
+        "dificultad para respirar",
+        "respiración agitada"
+      ],
+      "responses": [
+        "La dificultad para respirar puede ser un síntoma grave. Te recomiendo buscar ayuda médica de inmediato para una evaluación adecuada."
+      ]
+    },
+    {
+      "tag": "informacion_vacunas",
+      "patterns": [
+        "información sobre vacunas",
+        "efectos secundarios de vacunas",
+        "programa de vacunación"
+      ],
+      "responses": [
+        "Las vacunas son fundamentales para prevenir enfermedades. Consulta con tu médico o el programa de vacunación local para obtener información actualizada."
+      ]
+    },
+    {
+      "tag": "malestar_estomacal",
+      "patterns": [
+        "malestar estomacal",
+        "dolor de estómago",
+        "náuseas"
+      ],
+      "responses": [
+        "El malestar estomacal puede tener diversas causas, desde problemas digestivos hasta infecciones. Si persiste, busca asesoramiento médico."
+      ]
+    },
+    {
+      "tag": "informacion_nutricion",
+      "patterns": [
+        "consejos de nutrición",
+        "alimentación saludable",
+        "dieta equilibrada"
+      ],
+      "responses": [
+        "Una dieta equilibrada es esencial para la salud. Considera consultar a un nutricionista para obtener recomendaciones personalizadas."
+      ]
+    },
+    {
+      "tag": "dolor_articular",
+      "patterns": [
+        "dolor en las articulaciones",
+        "articulaciones inflamadas",
+        "rigidez en las articulaciones"
+      ],
+      "responses": [
+        "El dolor en las articulaciones puede tener varias causas, como artritis o lesiones. Busca asesoramiento médico para un diagnóstico preciso."
+      ]
+    },
+    {
+      "tag": "dolor_pecho",
+      "patterns": [
+        "dolor en el pecho",
+        "opresión en el pecho",
+        "malestar en el pecho"
+      ],
+      "responses": [
+        "El dolor en el pecho puede ser un síntoma de problemas cardíacos. Busca ayuda médica de inmediato para una evaluación detallada."
+      ]
+    },
+    {
+      "tag": "informacion_ejercicio",
+      "patterns": [
+        "beneficios del ejercicio",
+        "rutina de ejercicios",
+        "mejores tipos de ejercicio"
+      ],
+      "responses": [
+        "El ejercicio regular tiene numerosos beneficios para la salud. Consulta con un entrenador personal o profesional de la salud para obtener una rutina adecuada."
+      ]
+    },
+    {
+      "tag": "sintomas_covid",
+      "patterns": [
+        "síntomas de COVID-19",
+        "signos de coronavirus",
+        "¿crees que tengo COVID?"
+      ],
+      "responses": [
+        "Los síntomas de COVID-19 incluyen fiebre, tos, y dificultad para respirar. Si experimentas estos síntomas, busca orientación médica y considera hacerte una prueba."
+      ]
+    },
+    {
+      "tag": "informacion_medicamentos",
+      "patterns": [
+        "efectos secundarios de medicamentos",
+        "interacciones medicamentosas",
+        "cómo tomar medicamentos"
+      ],
+      "responses": [
+        "Es importante conocer los efectos secundarios y las interacciones de los medicamentos. Habla con tu médico o farmacéutico para obtener información específica sobre tus medicamentos."
+      ]
+    },
+    {
+      "tag": "fatiga",
+      "patterns": [
+        "siento fatiga",
+        "cansancio constante",
+        "falta de energía"
+      ],
+      "responses": [
+        "La fatiga puede ser causada por diversas razones, desde falta de sueño hasta condiciones médicas. Si persiste, busca asesoramiento médico para identificar la causa."
+      ]
+    },
+    {
+      "tag": "alergias",
+      "patterns": [
+        "tengo alergias",
+        "picazón en los ojos",
+        "estornudos frecuentes"
+      ],
+      "responses": [
+        "Las alergias pueden causar síntomas como picazón en los ojos y estornudos. Consulta a un alergólogo para un diagnóstico y tratamiento adecuados."
+      ]
+    },
+    {
+      "tag": "ansiedad",
+      "patterns": [
+        "siento ansiedad",
+        "ataque de pánico",
+        "dificultad para respirar por ansiedad"
+      ],
+      "responses": [
+        "La ansiedad puede manifestarse de diversas formas. Busca apoyo de un profesional de la salud mental para abordar los síntomas y encontrar estrategias de manejo."
+      ]
+    },
+    {
+      "tag": "deshidratacion",
+      "patterns": [
+        "signos de deshidratación",
+        "sed constante",
+        "orina oscura"
+      ],
+      "responses": [
+        "La deshidratación puede tener efectos negativos en la salud. Asegúrate de beber suficiente agua y busca atención médica si experimentas signos de deshidratación."
+      ]
+    },
+    {
+      "tag": "problemas_sueño",
+      "patterns": [
+        "insomnio",
+        "dificultad para dormir",
+        "cambios en el patrón de sueño"
+      ],
+      "responses": [
+        "Los problemas de sueño pueden afectar la salud en general. Establece una rutina de sueño y consulta a un especialista si persisten las dificultades para dormir."
+      ]
+    },
+    {
+      "tag": "informacion_vacunas",
+      "patterns": [
+        "beneficios de las vacunas",
+        "efectos secundarios de las vacunas",
+        "importancia de vacunarse"
+      ],
+      "responses": [
+        "Las vacunas son fundamentales para prevenir enfermedades. Consulta con tu médico para obtener información específica sobre las vacunas recomendadas para ti."
+      ]
+    },
+    {
+      "tag": "tratamiento",
+      "patterns": [
+        "cómo tratar una enfermedad respiratoria",
+        "medicamentos comunes para enfermedades respiratorias",
+        "remedios caseros"
+      ],
+      "responses": [
+        "El tratamiento de enfermedades respiratorias varía según la condición. Consulta a un médico para obtener un diagnóstico preciso. Pueden recetarse medicamentos o recomendarse remedios caseros según el caso."
+      ]
+    },
+    {
+      "tag": "covid_19",
+      "patterns": [
+        "síntomas de COVID-19",
+        "cómo protegerse del COVID-19",
+        "protocolo ante síntomas"
+      ],
+      "responses": [
+        "Los síntomas de COVID-19 incluyen fiebre, tos y dificultad para respirar. Protégete lavándote las manos y usando mascarilla. Si experimentas síntomas, aíslate y busca atención médica."
+      ]
+    },
+    {
+      "tag": "alergias_respiratorias",
+      "patterns": [
+        "síntomas de alergias respiratorias",
+        "cómo aliviar las alergias",
+        "alérgico al polen"
+      ],
+      "responses": [
+        "Las alergias respiratorias pueden causar congestión nasal y estornudos. Evita alérgenos, usa filtros de aire y considera antihistamínicos para aliviar los síntomas. Consulta a un alergólogo para un diagnóstico específico."
+      ]
+    },
+    {
+      "tag": "asma",
+      "patterns": [
+        "síntomas de asma",
+        "cómo controlar el asma",
+        "inhaladores para el asma"
+      ],
+      "responses": [
+        "El asma puede causar sibilancias y dificultad para respirar. Usa inhaladores según las indicaciones de tu médico, evita desencadenantes y mantén un plan de control del asma."
+      ]
+    },
+    {
+      "tag": "neumonia",
+      "patterns": [
+        "síntomas de neumonía",
+        "tratamiento para la neumonía",
+        "cómo prevenir la neumonía"
+      ],
+      "responses": [
+        "La neumonía puede causar fiebre y dolor en el pecho. Busca atención médica para el diagnóstico y tratamiento. La vacuna antineumocócica puede ayudar a prevenir ciertos tipos de neumonía."
+      ]
+    },
+    {
+      "tag": "prevencion_enfermedades_respiratorias",
+      "patterns": [
+        "cómo prevenir enfermedades respiratorias",
+        "medidas preventivas para enfermedades respiratorias",
+        "hábitos saludables"
+      ],
+      "responses": [
+        "Para prevenir enfermedades respiratorias, lávate las manos frecuentemente, evita el contacto cercano con personas enfermas, practica una buena higiene al estornudar y toser, y mantén un estilo de vida saludable."
+      ]
+    },
+    {
+      "tag": "ejercicio_respiratorio",
+      "patterns": [
+        "ejercicios respiratorios",
+        "cómo mejorar la capacidad pulmonar",
+        "respiración profunda"
+      ],
+      "responses": [
+        "Los ejercicios respiratorios, como la respiración profunda y la práctica de ejercicios cardiovasculares, pueden ayudar a mejorar la capacidad pulmonar y mantener la salud respiratoria."
+      ]
+    },
+    {
+      "tag": "contaminacion_ambiental",
+      "patterns": [
+        "efectos de la contaminación en la salud respiratoria",
+        "cómo protegerse de la contaminación",
+        "calidad del aire"
+      ],
+      "responses": [
+        "La contaminación del aire puede afectar la salud respiratoria. Protégete usando máscaras en áreas contaminadas, ventila tu hogar y evita el tabaco para mantener una buena calidad del aire."
+      ]
+    },
+    {
+      "tag": "consulta_profesional",
+      "patterns": [
+        "cuándo consultar a un médico por síntomas respiratorios",
+        "buscar ayuda médica",
+        "especialista en enfermedades respiratorias"
+      ],
+      "responses": [
+        "Si experimentas síntomas respiratorios persistentes o graves, es recomendable consultar a un médico o a un especialista en enfermedades respiratorias para obtener un diagnóstico y tratamiento adecuados."
+      ]
+    },
+    {
+      "tag": "alergias",
+      "patterns": [
+        "sospecho que tengo alergias",
+        "cómo diferenciar alergias de un resfriado",
+        "síntomas de alergia"
+      ],
+      "responses": [
+        "Las alergias pueden presentar síntomas similares a los del resfriado. Si experimentas estornudos, picazón en los ojos y nariz congestionada de forma recurrente, podrían ser alergias. Consulta a un especialista para un diagnóstico preciso."
+      ]
+    },
+    {
+      "tag": "asma",
+      "patterns": [
+        "posibles signos de asma",
+        "dificultad para respirar",
+        "sospecha de asma"
+      ],
+      "responses": [
+        "El asma puede causar dificultad para respirar, sibilancias y opresión en el pecho. Si experimentas estos síntomas, es crucial buscar atención médica para evaluar si puedes tener asma."
+      ]
+    },
+    {
+      "tag": "COVID-19",
+      "patterns": [
+        "sospecho que tengo COVID-19",
+        "principales síntomas de COVID-19",
+        "qué hacer si tengo COVID-19"
+      ],
+      "responses": [
+        "Los síntomas comunes de COVID-19 incluyen fiebre, tos, dificultad para respirar y pérdida del gusto u olfato. Si sospechas que tienes COVID-19, es importante aislarte y buscar orientación médica."
+      ]
+    },
+    {
+      "tag": "uso_mascarilla",
+      "patterns": [
+        "cómo usar una mascarilla correctamente",
+        "eficacia de las mascarillas",
+        "tipos de mascarillas"
+      ],
+      "responses": [
+        "Usa una mascarilla cubriendo nariz y boca en lugares públicos para reducir la propagación de enfermedades respiratorias. Asegúrate de que la mascarilla se ajuste adecuadamente y sigue las pautas de salud pública."
+      ]
+    },
+    {
+      "tag": "enfermedad_pulmonar_obstructiva_cronica",
+      "patterns": [
+        "síntomas de EPOC",
+        "fumar y EPOC",
+        "tratamientos para la EPOC"
+      ],
+      "responses": [
+        "La Enfermedad Pulmonar Obstructiva Crónica (EPOC) puede causar dificultad para respirar, tos crónica y producción de esputo. Si eres fumador o exfumador y experimentas estos síntomas, consulta con un profesional de la salud para evaluar si puedes tener EPOC."
+      ]
+    },
+    {
+      "tag": "bronquiolitis",
+      "patterns": [
+        "bronquiolitis en adultos",
+        "síntomas de bronquiolitis",
+        "tratamiento para la bronquiolitis"
+      ],
+      "responses": [
+        "La bronquiolitis puede afectar a adultos, causando tos, sibilancias y dificultad para respirar. Si presentas estos síntomas, busca atención médica para un diagnóstico adecuado y un plan de tratamiento."
+      ]
+    },
+    {
+      "tag": "ejercicio_respiratorio",
+      "patterns": [
+        "ejercicios para fortalecer los pulmones",
+        "respiración profunda",
+        "mejorar capacidad pulmonar"
+      ],
+      "responses": [
+        "Realizar ejercicios respiratorios y mantener un estilo de vida activo puede contribuir a fortalecer los pulmones y mejorar la capacidad respiratoria. Consulta con un profesional de la salud antes de iniciar un nuevo régimen de ejercicios."
+      ]
+    },
+    {
+      "tag": "asma",
+      "patterns": [
+        "síntomas de asma",
+        "inhaladores para el asma",
+        "triggers del asma"
+      ],
+      "responses": [
+        "El asma puede causar sibilancias, opresión en el pecho y dificultad para respirar. Es importante identificar y evitar los desencadenantes (triggers). Si sospechas que podrías tener asma, consulta con un profesional de la salud para una evaluación adecuada."
+      ]
+    },
+    {
+      "tag": "fibrosis_pulmonar",
+      "patterns": [
+        "síntomas de fibrosis pulmonar",
+        "causas de la fibrosis pulmonar",
+        "tratamiento para la fibrosis pulmonar"
+      ],
+      "responses": [
+        "La fibrosis pulmonar puede provocar tos seca y dificultad para respirar. Consulta con un profesional de la salud si experimentas estos síntomas. El diagnóstico de la fibrosis pulmonar a menudo requiere pruebas médicas especializadas."
+      ]
+    },
+    {
+      "tag": "covid_19",
+      "patterns": [
+        "síntomas de COVID-19",
+        "pruebas para COVID-19",
+        "qué hacer si creo que tengo COVID-19"
+      ],
+      "responses": [
+        "Los síntomas del COVID-19 incluyen fiebre, tos y dificultad para respirar. Si crees que puedes tener COVID-19, sigue las pautas de salud pública, hazte la prueba y busca atención médica si es necesario."
+      ]
+    },
+    {
+      "tag": "enfisema",
+      "patterns": [
+        "síntomas de enfisema",
+        "causas del enfisema",
+        "mejorar la calidad de vida con enfisema"
+      ],
+      "responses": [
+        "El enfisema es una enfermedad pulmonar obstructiva crónica (EPOC) que puede causar dificultad para respirar. Dejar de fumar y seguir un plan de tratamiento pueden ayudar a mejorar la calidad de vida. Consulta a un profesional de la salud para obtener orientación."
+      ]
+    },
+    {
+      "tag": "bronquiectasia",
+      "patterns": [
+        "síntomas de bronquiectasia",
+        "tratamiento para la bronquiectasia",
+        "ejercicios respiratorios para bronquiectasia"
+      ],
+      "responses": [
+        "La bronquiectasia se caracteriza por daño permanente a las vías respiratorias, lo que puede provocar infecciones recurrentes y tos con flema. El tratamiento incluye medicamentos y terapia física. Consulta con un especialista para un manejo adecuado."
+      ]
+    },
+    {
+      "tag": "tos_ferina",
+      "patterns": [
+        "síntomas de tos ferina",
+        "vacuna contra la tos ferina",
+        "tratamiento para la tos ferina"
+      ],
+      "responses": [
+        "La tos ferina es altamente contagiosa y puede causar tos intensa. La vacunación es clave para la prevención. Si sospechas tos ferina, busca atención médica y sigue las pautas de tratamiento recomendadas."
+      ]
+    },
+    {
+      "tag": "covid19",
+      "patterns": [
+        "síntomas de COVID-19",
+        "pruebas para COVID-19",
+        "cómo protegerse del COVID-19"
+      ],
+      "responses": [
+        "El COVID-19 puede causar fiebre, tos y dificultad para respirar. Realizarse pruebas, seguir pautas de prevención y buscar atención médica son importantes. Consulta fuentes confiables y sigue las recomendaciones locales."
+      ]
+    },
+    {
+      "tag": "enfermedad_intersticial_pulmonar",
+      "patterns": [
+        "síntomas de enfermedad intersticial pulmonar",
+        "diagnóstico de enfermedad intersticial pulmonar",
+        "tratamiento para enfermedad intersticial pulmonar"
+      ],
+      "responses": [
+        "La enfermedad intersticial pulmonar afecta los tejidos pulmonares. El diagnóstico puede incluir pruebas de imagen y biopsias. El tratamiento varía; consulta a un neumólogo para opciones específicas."
+      ]
+    },
+    {
+      "tag": "bronquiectasias",
+      "patterns": [
+        "síntomas de bronquiectasias",
+        "causas de bronquiectasias",
+        "manejo de bronquiectasias"
+      ],
+      "responses": [
+        "Las bronquiectasias son daños a los conductos bronquiales. Los síntomas incluyen tos y producción de esputo. El tratamiento aborda las causas subyacentes. Consulta a un especialista para una gestión adecuada."
+      ]
+    },
+    {
+      "tag": "rinitis_alergica",
+      "patterns": [
+        "síntomas de rinitis alérgica",
+        "tratamiento para rinitis alérgica",
+        "alérgenos comunes"
+      ],
+      "responses": [
+        "La rinitis alérgica causa estornudos, picazón nasal y congestión. Los alérgenos incluyen polen y ácaros. El tratamiento puede incluir antihistamínicos. Identificar y evitar alérgenos es crucial."
+      ]
+    },
+    {
+      "tag": "neumotórax",
+      "patterns": [
+        "síntomas de neumotórax",
+        "tratamiento para neumotórax",
+        "cuándo buscar ayuda médica"
+      ],
+      "responses": [
+        "El neumotórax causa dolor súbito en el pecho y dificultad para respirar. El tratamiento puede incluir la colocación de un tubo en el pecho para drenar el aire. Busca ayuda médica inmediata si sospechas un neumotórax."
+      ]
+    }
   ]
 }
